@@ -1,13 +1,13 @@
 {
   "name": "reddit-karma-farm",
   "version": "1.0.0",
-  "description": "",
+  "description": "Reddit Karma Farming application.",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon App"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Rohit Karan Jethoe",
+  "license": "MIT",
   "dependencies": {
     "puppeteer": "^15.5.0"
   },
