@@ -1,4 +1,5 @@
 const Reddit = require("./modules/Reddit");
+const fetchInput = require('./modules/fetchInput');
 
 (async () => {
     console.log("[] REDDIT KARMA FARM []");
