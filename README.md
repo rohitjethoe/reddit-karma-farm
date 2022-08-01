@@ -13,7 +13,9 @@ Een Node.js oplossing om karma te farmen op Reddit. Geautomatiseerd met puppetee
 A Node.js solution to farm karma on Reddit. Automated with puppeteer, interface created with Electron.js
 
 ## Prerequisites
+
 Node.js: ^12.18.2
+
 npm: ^6.14.5
 
 ## Installation
