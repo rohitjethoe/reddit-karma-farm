@@ -7,7 +7,7 @@ const puppeteer = require('puppeteer');
 
 const Reddit = {
     url: 'https://www.reddit.com/login/',
-    postUrl: 'https://www.reddit.com/r/FreeKarma4U/submit',
+    communityUrl: 'https://www.reddit.com/r/FreeKarma4You/new/',
     browser: null, 
     page: null, 
     openBrowser: async () => {
@@ -19,51 +19,70 @@ const Reddit = {
         await Reddit.page.waitForSelector('input#loginUsername');
     }, 
     loginUser: async (username, password) => {
-          // reddit@username.
+        // reddit@username.
         await Reddit.page.type(
             'input[name=username]', 
             username, 
             { delay: Math.random * 10 });
         
-          // reddit@password.
+        // reddit@password.
         await Reddit.page.type(
             'input[name=password]',
             password,
             { delay: Math.random * 10 });
 
         await Reddit.page.click('button[type=submit]');
+    
+        // Wait for black screen. 
+        await Reddit.page.waitForTimeout(30000);
+        console.log('black screen cleared');
     },
     farmRedditKarma: async (title) => {
-        await Reddit.page.waitForTimeout(4000);
-        await Reddit.page.goto(Reddit.postUrl);
+        await Reddit.page.goto(Reddit.communityUrl);
+        await Reddit.page.waitForTimeout(1500);
 
         let postTitle;
         
-        if (title == undefined) {
-              // fixed post-title.
-            postTitle = "upvote me please.";
+        if (title == undefined || title == "") {
+            // fixed post-title.
+            postTitle = "I upvoted, upvote me back please.";
         } else {
             postTitle = title;
         }
 
-        const postUrls = [
-            "https://longdogechallenge.com/",
-            "http://corndog.io/",
-            "https://binarypiano.com/",
-            "https://hooooooooo.com/",
-            "https://alwaysjudgeabookbyitscover.com/"
-        ];
+        console.log(postTitle);
+        
+        // .click() -> first new post of reddit community.
+        await Reddit.page.evaluate(() => {
+            const posts = document.querySelectorAll('.SQnoC3ObvgnGjWt90zD9Z');
+            posts[0].click();
+        });
 
-          // Wait for black screen. 
-        await Reddit.page.waitForTimeout(30000);
-        console.log('black screen cleared');
+        await Reddit.page.waitForTimeout(1500);
+        await Reddit.page.type('._6Ej82J4aTDK36LLOcpFbC', "I upvoted, upvote me back please.");
+        
+        // .click() -> post comment button.
+        await Reddit.page.evaluate(() => {
+            const postBtn = document.querySelectorAll('button._22S4OsoDdOqiM-hPTeOURa');
+            postBtn[0].click();
+        });
+    },
+    deleteComments: async (username) => {
+        const userCommentsUrl = `https://www.reddit.com/user/${username}/comments/`
+
+        await Reddit.page.goto(userCommentsUrl);
+        await Reddit.page.waitForTimeout(1500);
 
         await Reddit.page.evaluate(() => {
-            const postTitleField = document.querySelectorAll('.PqYQ3WC15KaceZuKcFI02');
-            postTitleField[0].value = "test";
+            let actionBtn = document.querySelectorAll('._38GxRFSqSC-Z2VLi5Xzkjy');
+            actionBtn[0].click();
 
-            postTitleField[1].value = "test.com";
-        });
+            let actions = document.querySelectorAll('._2LNy1r5iuFMrf0PLh4UdV-');
+            actions[2].click();
+
+            let deleteBtn = document.querySelectorAll('._2nelDm85zKKmuD94NequP0');
+            deleteBtn[1].click();
+        })
     }
 }
 
