@@ -12,6 +12,7 @@ Een Node.js oplossing om karma te farmen op Reddit. Geautomatiseerd met puppetee
 
 ## Installation
 
-1. ```git clone https://github.com/rohitjethoe/E-checker.git```
+1. Run ```git clone https://github.com/rohitjethoe/E-checker.git```
+2. Install npm modules ```npm install```
 
 ## Frequently Asked Questions
