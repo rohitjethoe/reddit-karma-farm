@@ -1,16 +1,23 @@
-const Reddit = require("./modules/Reddit");
-const fetchInput = require('./modules/fetchInput');
+const {app, BrowserWindow} = require('electron');
+const url = require('url');
+const path = require('path');
 
-(async () => {
-    console.log("[] REDDIT KARMA FARM []");
-    console.log("[]  By Rohit Jethoe  []");
-    console.log();
+let mainWindow;
 
-    await fetchInput.getUsername();
-    await fetchInput.getPassword();
+app.on('ready', () => {
+    mainWindow = new BrowserWindow({
+        width: 375,
+        height: 600,
+        // transparent: true,
+        frame: true,
+        webPreferences: {
+            nodeIntegration: true
+        }
+    });
 
-    await Reddit.openBrowser();
-    await Reddit.loginUser(fetchInput.userDetails.username, fetchInput.userDetails.password);
-    await Reddit.farmRedditKarma();
-
-})();
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'views/index.html'),
+        protocol: 'file:',
+        slashes: true
+    }));
+});

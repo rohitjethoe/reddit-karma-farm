@@ -8,7 +8,7 @@ Application for farming karma on Reddit.
 
 ## Description
 
-Een Node.js oplossing om karma te farmen op Reddit. Geautomatiseerd met puppeteer.
+Een Node.js oplossing om karma te farmen op Reddit. Geautomatiseerd met puppeteer, interface met Electron.
 
 ## Prerequisites
 Node.js: ^12.18.2
@@ -18,6 +18,6 @@ npm: ^6.14.5
 
 1. Run ```git clone https://github.com/rohitjethoe/E-checker.git```
 2. Install npm modules ```npm install```
-3. Paste ```node App``` in your terminal.
+3. Paste ```npm run start``` in your terminal.
 
 ## Frequently Asked Questions

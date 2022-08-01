@@ -2,8 +2,9 @@
   "name": "reddit-karma-farm",
   "version": "1.0.0",
   "description": "Reddit Karma Farming application.",
-  "main": "index.js",
+  "main": "App.js",
   "scripts": {
+    "start": "electron .",
     "dev": "nodemon App"
   },
   "author": "Rohit Karan Jethoe",
