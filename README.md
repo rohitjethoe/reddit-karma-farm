@@ -30,4 +30,4 @@ This application was created on the Node.js runtime. I used npm modules Puppetee
 
 ### How can I contribute?
 
-See [reddit-karma-farm/issues](https://github.com/rohitjethoe/reddit-karma-farm/issues) to file and resolve issues.
+See ```[/reddit-karma-farm/issues](https://github.com/rohitjethoe/reddit-karma-farm/issues)``` to file and resolve issues.
