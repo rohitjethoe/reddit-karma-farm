@@ -1,23 +1,34 @@
-const {app, BrowserWindow} = require('electron');
-const url = require('url');
+const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
-let mainWindow;
+const createWindow = () => {
+  const mainWindow = new BrowserWindow({
+    width: 365,
+    height: 600,
+    minWidth: 365,
+    minHeight: 600,
+    maxWidth: 365,
+    maxHeight: 600,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  });
 
-app.on('ready', () => {
-    mainWindow = new BrowserWindow({
-        width: 375,
-        height: 600,
-        // transparent: true,
-        frame: true,
-        webPreferences: {
-            nodeIntegration: true
-        }
-    });
+  mainWindow.loadFile(path.join(__dirname, 'views/index.html'));
 
-    mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'views/index.html'),
-        protocol: 'file:',
-        slashes: true
-    }));
+};
+
+app.on('ready', createWindow);
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
 });
+
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow();
+  }
+});
+
