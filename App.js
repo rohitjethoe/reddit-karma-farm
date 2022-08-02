@@ -10,7 +10,8 @@ const createWindow = () => {
     maxWidth: 365,
     maxHeight: 600,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      contextIsolation: false
     }
   });
 

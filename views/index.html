@@ -21,32 +21,39 @@
                 <a class="subtext-url" href="http://github.com/rohitjethoe/reddit-karma-farm" target="_blank">http://github.com/rohitjethoe/reddit-karma-farm</a>
             </span>
         </div>
-    </header>
+    </header> <!-- header -->
     <main>
         <div class="user">
-            <div class="user-header">
+            <div class="user-title">
                 Reddit Login
             </div>
-            <ul>
-                <li>
-                    <div class="user-form-title">
-                        Username
-                    </div>
-                    <input type="text">
-                </li>
-                <li>
-                    <div class="user-form-title">
-                        Password
-                    </div>
-                    <input type="text">
-                </li>
-            </ul>
+            <div class="user-field username">
+                <span>Username</span> <br>
+                <input type="text" name="username" id="username">
+            </div>
+            <div class="user-field password">
+                <span>Password</span> <br>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="submit">
+                <button id="run">Run</button>
+            </div>
         </div>
-    </main>
+        <div class="stats">
+            <div class="comments">
+                💬 commented 0 times.
+            </div>
+            <div class="deleted">
+                ❌ deleted 0 comments.
+            </div>
+        </div>
+    </main> <!-- main -->
     <footer>
         <div class="copyright">
             Made with ❤️ by Rohit.
         </div>
-    </footer>
+    </footer> <!-- footer -->
+
+    <script src="./index.js"></script>
 </body>
 </html>

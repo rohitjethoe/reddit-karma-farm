@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: #fff;
   font-family: 'Inter', sans-serif;
 }
 
@@ -31,35 +31,52 @@ header .logo .subtext .subtext-url:link, header .logo .subtext .subtext-url:visi
 }
 
 main .user {
-  padding-left: 5%;
+  margin-left: 5%;
+  margin-top: 5%;
 }
 
-main .user .user-header {
+main .user .user-title {
   text-transform: uppercase;
   color: #797d7f;
   font-weight: bold;
-  font-size: 14px;
 }
 
-main .user ul {
-  margin-top: 10px;
-  list-style-type: none;
+main .user .user-field {
+  margin-top: 2%;
 }
 
-main .user ul li {
-  margin-top: 5px;
-}
-
-main .user ul li .user-form-title {
-  font-weight: bold;
+main .user .user-field span {
   font-size: 12px;
-  margin-bottom: 5px;
 }
 
-main .user ul li input {
-  padding: 6px 12px;
-  border: 1px solid #ececee;
-  border-radius: 4px;
+main .user .user-field input {
+  margin-top: 1%;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+main .user .submit button {
+  margin-top: 3%;
+  border: none;
+  background-color: rgba(33, 33, 33, 0.9);
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+main .user .submit button:hover {
+  background-color: #212121;
+  cursor: pointer;
+}
+
+main .stats {
+  font-size: 12px;
+  margin-left: 5%;
+  margin-top: 5%;
 }
 
 footer {
