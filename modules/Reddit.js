@@ -66,6 +66,8 @@ const Reddit = {
             const postBtn = document.querySelectorAll('button._22S4OsoDdOqiM-hPTeOURa');
             postBtn[0].click();
         });
+
+        await Reddit.page.waitForTimeout(5000);
     },
     deleteComments: async (username) => {
         const userCommentsUrl = `https://www.reddit.com/user/${username}/comments/`
