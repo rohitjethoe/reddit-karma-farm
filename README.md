@@ -20,7 +20,7 @@ npm: ^6.14.5
 
 ## Installation
 
-1. Run ```git clone https://github.com/rohitjethoe/E-checker.git```
+1. Run ```git clone https://github.com/rohitjethoe/reddit-karma-farm.git```
 2. Install npm modules ```npm install```
 3. Paste ```npm run start``` in your terminal.
 
