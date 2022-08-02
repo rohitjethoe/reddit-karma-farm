@@ -12,7 +12,7 @@ const Reddit = {
     page: null, 
     openBrowser: async () => {
         Reddit.browser = await puppeteer.launch({
-            headless: false
+            headless: true
         });
         Reddit.page = await Reddit.browser.newPage();
         await Reddit.page.goto(Reddit.url);
