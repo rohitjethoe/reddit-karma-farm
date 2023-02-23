@@ -18,7 +18,7 @@
 <br />
 <p align="center">
     <a href="https://github.com/rohitjethoe/reddit-karma-farm">
-        <img src="./assets/reddit.png" alt="Logo" width="80" height="80">
+        <img src="./assets/reddit.png" alt="Logo" width="60" height="60">
     </a>
     <h3 align="center">reddit-karma-farm</h3>
     <p align="center">
